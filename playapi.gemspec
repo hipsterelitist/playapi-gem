@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = "Interact with PlayAPI"
   s.authors     = ["Chris France"]
   s.email       = 'france@playapi.com'
-  s.files       = ["lib/playapi.rb", "lib/playapi/client.rb", "lib/playapi/entity.rb"]
+  s.files       = ["lib/playapi.rb", "lib/playapi/client.rb", "lib/playapi/entity.rb", 'lib/playapi/configurable.rb']
   s.homepage    =
     'http://rubygems.org/gems/playapi'
 end

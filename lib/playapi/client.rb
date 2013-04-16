@@ -1,28 +1,12 @@
+require 'faraday'
+
 module Playapi
 	class Client
 
-		DEFAULT_CONNECTION_MIDDLEWARE = [
-      Faraday::Request::Multipart,
-      Faraday::Request::UrlEncoded,
-      FaradayMiddleware::Mashify,
-      FaradayMiddleware::ParseJson
-    ]
-
 		def initialize(options={})
-			@client_id = options[:client_id]
-			@client_secret = options[:client_secret]
-			@oauth_token = options[:oauth_token]
-			@ssl = options[:ssl] || false
-			@connection_middleware = options[:connection_middleware] || []
-			@connection_middleware += DEFAULT_CONNECTION_MIDDLEWARE
-		end
-
-		def ssl
-			@ssl || false
-		end
-
-		def play_url
-			"https://pre-playapi-dev.herokuapp.com/"
+			Playapi::Configurable.keys.each do |key|
+				instance_variable_set(:"@#{key}", options[key] || Playapi.instance_variable_get(:"@#{key}"))
+			end
 		end
 
 		def connection
@@ -31,23 +15,16 @@ module Playapi
 			params[:client_secret] = @client_secret
 			params[:token] = @oauth_token
 
-			@connection ||= Faraday::Connection.new(:url => play_url, 
+
+			@connection ||= Faraday::Connection.new(:url => @endpoint, 
 					:ssl => @ssl,
 					:params => params,
 					:headers => default_headers
 				) do |builder|
 				@connection_middleware.each do |mw|
 						builder.use *mw
-					end
+				end
 				builder.adapter Faraday.default_adapter
-			end
-		end
-
-		def return_error_or_response(response)
-			if response.status == 200
-				response_body
-			else
-				raise "Something went wrong."
 			end
 		end
 

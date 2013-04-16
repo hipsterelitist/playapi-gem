@@ -1,18 +1,20 @@
 require 'faraday'
 require 'faraday_middleware'
+require 'hashie'
+require 'playapi/configurable'
+require 'playapi/client'
+require 'playapi/entity'
 
 module Playapi
-	require 'playapi/client'
-
 	class << self
-		FIELDS = [:client_id, :client_secret]
-		attr_accessor(*FIELDS)
-		def client
-			#@client = p
-		end
+		include Playapi::Configurable
 
-		def get_client
-			Playapi::Client.new
-		end
+		def client
+      @client = Playapi::Client.new(options) unless defined?(@client) && @client.hash == options.hash
+      @client
+    end
+
 	end
 end
+
+Playapi.reset! # sets default values
