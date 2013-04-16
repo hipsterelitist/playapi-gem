@@ -18,9 +18,9 @@ module Playapi
 				get_object(:get, "campaign", url).interactions
 			end
 
-			def leaders(name, page=0)
-				url = "api/v2/campaigns/#{name}"
-				get_object(:get, "interactions", url)
+			def leaders(campaign_name, opts = {})
+				url = "api/v2/campaigns/#{campaign_name}/leaders"
+				get_object(:get, "results", url, opts)
 			end
 
 			def create(opts)
