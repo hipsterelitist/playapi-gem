@@ -2,6 +2,7 @@ require 'faraday'
 
 module Playapi
 	class Client
+		include Playapi::Configurable # i don't think this is needed
 
 		def initialize(options={})
 			Playapi::Configurable.keys.each do |key|

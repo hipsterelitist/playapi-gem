@@ -1,36 +1,24 @@
+require 'playapi/utils'
+
 module Playapi
 	class Entity
-		#include Client
+		extend Playapi::Utils
 
 		class << self
 
 			def get(id)
 				url = "api/v2/entities/#{id}"
-				method = "get"
-				res = @connection.get do |req|
-					req.url url
-				end
-				return_error_or_response(res)
+				get_object(:get, "entity", url)
 			end
 
 			def create(opts)
 				url = "api/v2/entities"
-				params = opts
-				conn = connection
-				conn.params.merge!(params)
-				conn.post do |req|
-					req.url url
-				end	
-				return_error_or_response(res)
+				get_object(:get, "entity", url, {:entity => opts})
 			end
 
-			def update(id)
+			def update(id, opts)
 				url = "api/v2/entities/#{id}"
-				method = "put"
-				res = connection.put do |req|
-					req.url url
-				end
-				return_error_or_response(res)
+				get_object(:put, "entity", url, {:entity => opts})
 			end
 
 		end

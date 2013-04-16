@@ -4,6 +4,7 @@ require 'hashie'
 require 'playapi/configurable'
 require 'playapi/client'
 require 'playapi/entity'
+require 'playapi/utils'
 
 module Playapi
 	class << self
