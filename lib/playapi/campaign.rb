@@ -1,7 +1,7 @@
 require 'playapi/utils'
 
 module Playapi
-	class Interaction
+	class Campaign
 		extend Playapi::Utils
 
 		# stub this out for now, it will probably do crazy stuff when we integrate campaign controls.

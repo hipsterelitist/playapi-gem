@@ -5,6 +5,8 @@ require 'playapi/configurable'
 require 'playapi/client'
 require 'playapi/entity'
 require 'playapi/utils'
+require 'playapi/interaction'
+require 'playapi/campaign'
 
 module Playapi
 	class << self
