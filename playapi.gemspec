@@ -12,7 +12,10 @@ Gem::Specification.new do |s|
                   "lib/playapi/visual.rb",
                   "lib/playapi/campaign.rb",
                   "lib/playapi/configurable.rb",
-                  "lib/playapi/utils.rb"]
+                  "lib/playapi/utils.rb",
+                  "lib/playapi/validation/instapic.rb",
+                  "lib/playapi/validation/tweet.rb"
+                ]
   s.homepage    =
     'http://rubygems.org/gems/playapi'
 end

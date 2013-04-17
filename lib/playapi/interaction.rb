@@ -1,4 +1,5 @@
 require 'playapi/utils'
+require 'playapi/validation/instapic'
 
 module Playapi
 	class Interaction
@@ -22,8 +23,15 @@ module Playapi
 			end
 
 			def destroy(id)
-				url = "api/v2/interaction/#{id}"
+				url = "api/v2/interactions/#{id}"
 				get_object(:delete, "interaction", url)
+			end
+
+			def classed_interaction(type, opts)
+				url = "api/v2/interactions"
+				validator = "Playapi::Validation::#{type.capitalize}".split("::").inject(Module) {|acc, val| acc.const_get(val)}
+				validator.validate(opts)
+				get_object(:post, "interaction", url, {:interaction => opts, :type => type})
 			end
 
 		end
