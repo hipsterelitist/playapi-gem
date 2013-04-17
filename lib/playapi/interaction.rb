@@ -13,7 +13,7 @@ module Playapi
 
 			def create(opts)
 				url = "api/v2/interactions"
-				get_object(:get, "interaction", url, {:interaction => opts})
+				get_object(:post, "interaction", url, {:interaction => opts})
 			end
 
 			def update(id, opts)
