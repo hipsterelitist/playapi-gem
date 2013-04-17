@@ -9,12 +9,21 @@ module Playapi
   	private
 
   		def get_object(method, key, path, options={})
-  			res = Playapi.client.connection.send(method.to_sym, path, options).body
-  			res[key]
+  			res = Playapi.client.connection.send(method.to_sym, path, options)
+  			if res.status == 200
+  				res.body[key]
+  			else
+  				raise "Error returned: #{res.status}"
+  			end
   		end
 
   		def get_objects(method, path, options={})
-  			res = Playapi.client.connection.send(method.to_sym, path, options).body
+  			res = Playapi.client.connection.send(method.to_sym, path, options)
+  			if res.status == 200
+  				res.body
+  			else
+  				raise "Error returned: #{res.status}"
+  			end
   		end
 
   end
