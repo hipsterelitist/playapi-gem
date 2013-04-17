@@ -45,7 +45,7 @@ module Playapi
     end
 
     def reset!
-      defaultz = {client_id: "vRtQKj6iR_OvOOBbuppvHPPdfUjO9VArcPwk06tqKhM", client_secret: "sm1B5tZR8orGRzSDMuy_v0EpTUGXPrRqW7sVKws7bLc", oauth_token: "", endpoint: "http://localhost:5000"}
+      defaultz = {client_id: "acqkHsl6FXNMjNRMPelySrVuOBZRt_apvrmPXm74Xqo", client_secret: "_zEUUoGj4k_VxRDOQBRXmdVHgozLQ7FGOiJyEc+sLy0", oauth_token: "iPpooO3sTmpNWwy5r91kKHexJD1qZVO6Ad0VG3WALXM", endpoint: "http://http://198.199.69.11"}
       # we can probably chuck conn_ops
       conn_ops = {
         :connection_options => {:headers => {:accept => "application/json", :user_agent => "PlayAPI Gem 0.0.1"}, 
