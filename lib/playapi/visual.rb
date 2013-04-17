@@ -18,12 +18,12 @@ module Playapi
 
 			def create(opts)
 				url = "api/v2/visuals"
-				get_object(:post, "visual", url, opts)
+				get_object(:post, "visual", url, {:visual => opts})
 			end
 
 			def update(id, opts)
 				url = "api/v2/visuals/#{id}"
-				get_object(:put, "visual", url, opts)
+				get_object(:put, "visual", url, {:visual => opts})
 			end
 
 		end
