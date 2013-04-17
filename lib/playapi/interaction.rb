@@ -21,6 +21,11 @@ module Playapi
 				get_object(:put, "interaction", url, {:interaction => opts})
 			end
 
+			def destroy(id)
+				url = "api/v2/interaction/#{id}"
+				get_object(:delete, "interaction", url)
+			end
+
 		end
 
 	end

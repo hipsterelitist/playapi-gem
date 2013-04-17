@@ -26,6 +26,11 @@ module Playapi
 				get_object(:put, "visual", url, {:visual => opts})
 			end
 
+			def destroy(id)
+				url = "api/v2/visuals/#{id}"
+				get_object(:delete, "visual", url)
+			end
+
 		end
 
 	end
