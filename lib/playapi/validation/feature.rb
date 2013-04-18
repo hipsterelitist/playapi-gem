@@ -6,10 +6,8 @@ module Playapi
 
         def pkeys
           @pkeys ||= [
-            :feature_id,
-            :asset_url,
-            :content_id,
-            :name
+            :name,
+            :description
           ]
         end
 
