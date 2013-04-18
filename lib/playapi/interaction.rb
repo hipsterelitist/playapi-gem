@@ -61,14 +61,14 @@ module Playapi
 			#
 			# Required fields for ALL types (opts)
 			# 	:feature_id=STRING 	(Playapi Feature ID )
-			# 	:points=Float 			(Points for this interaction)
-			#   :content_id=String 	(3rd party (twitter status_id, etc) id from which content was sourced)
+			# 	:points=FLOAT			(Points for this interaction)
+			#   :content_id=STRING 	(3rd party (twitter status_id, etc) id from which content was sourced)
 			#
 			# Required fields for Instapics
-			# 	:asset_url=String 	(URL of the instagram image)
+			# 	:asset_url=STRING 	(URL of the instagram image)
 			#
 			# Required fields for Tweet
-			#   :text=String 			 	(Text from a Tweet)
+			#   :text=STRING 			 	(Text from a Tweet)
 
 			def classed_interaction(type="Custom", opts = {})
 				url = "api/v2/interactions"
