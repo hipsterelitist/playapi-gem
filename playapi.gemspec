@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
                   "lib/playapi/entity.rb",
                   "lib/playapi/interaction.rb",
                   "lib/playapi/visual.rb",
+                  "lib/playapi/feature.rb",
                   "lib/playapi/campaign.rb",
                   "lib/playapi/configurable.rb",
                   "lib/playapi/utils.rb",
