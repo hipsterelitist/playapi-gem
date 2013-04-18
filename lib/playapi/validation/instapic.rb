@@ -23,7 +23,7 @@ module Playapi
             #next if value.nil?
 
             unless value.is_a?(String) || value.is_a?(Integer) || value.is_a?(Float)
-              raise("Invalid #{value} specified: #{value} must be a string or a number") unless value == points
+              raise("Invalid #{interaction_field} specified: #{value} must be a string or a number") unless value == points
             end
           end
         end

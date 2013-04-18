@@ -47,7 +47,7 @@ module Playapi
 				get_object(:delete, "interaction", url)
 			end
 
-			# Create a classed interaction for your campaign
+			# Create a classed interaction for authed campaign
 			#
 			# Type is a string corresponds to a Playapi Interaction class
 			#
