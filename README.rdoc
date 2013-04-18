@@ -1,0 +1,8 @@
+require 'playapi'
+
+Playapi::Configure do |c|
+	c.client_id = ENV["playapi_client_id"]
+	c.client_secret = ENV["playapi_client_secret"]
+	c.oauth_token = ENV["playapi_token"]
+	# c.endpoint = ENV["playapi_endpoint"] # should be set to http://198.199.69.11/, which is staging ip
+end
