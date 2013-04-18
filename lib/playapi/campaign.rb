@@ -8,9 +8,9 @@ module Playapi
 
 		class << self
 
-			# Get the primary campaign for which you are currently authorized, one can optionally 
-			# pass the name of the campaign, if your credentials are good for multiple campaigns
-
+			# Get the primary campaign for which you are currently authorized, one will be able to
+			# pass the name of the campaign, if your credentials are good for multiple campaigns...
+			# but not yet.
 			def get(campaign_name = "index")
 				url = "api/v2/campaigns/"
 				#url += "/#{campaign_name}" unless campaign_name == nil
