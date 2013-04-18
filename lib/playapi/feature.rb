@@ -4,6 +4,10 @@ module Playapi
 	class Feature
 		extend Playapi::Utils
 
+		def initialize
+
+		end
+
 		class << self
 
 			def list

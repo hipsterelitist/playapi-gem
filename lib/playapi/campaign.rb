@@ -8,8 +8,9 @@ module Playapi
 
 		class << self
 
-			def get(name)
-				url = "api/v2/campaigns/#{name}"
+			def get(campaign_name = "index")
+				url = "api/v2/campaigns/"
+				#url += "/#{campaign_name}" unless campaign_name == nil
 				get_object(:get, "campaign", url)
 			end
 
