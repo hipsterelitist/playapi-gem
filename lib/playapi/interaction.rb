@@ -27,6 +27,10 @@ module Playapi
 			end
 
 			# Create a custom interaction for your campaign
+			# Optional fields (opts)
+			# :entity_id=STRING (Playapi Entity ID - ONLY USE THIS IF YOU HAVE A PLAYAPI PROVIDED ENTITY_ID)
+			# :points=Float (Points for this interaction)
+			# WILL BE DEPRECATED IN VERSION 0.0.2, please use classed_interaction! NOT A JOKE
 			def create(opts)
 				url = "api/v2/interactions"
 				get_object(:post, "interaction", url, {:interaction => opts})
@@ -43,8 +47,30 @@ module Playapi
 				get_object(:delete, "interaction", url)
 			end
 
-			# Create a specific interaction for your campaign
-			def classed_interaction(type, opts)
+			# Create a classed interaction for your campaign
+			#
+			# Type is a string corresponds to a Playapi Interaction class
+			#
+			# Valid options are:
+			# 		:type=STRING (Valid Options: Custom, Instapic, Tweet)
+			#  			Instapic(:content_id, :)
+			# 
+			#
+			# ID VALUES FOR THIS CLASS ARE PROVIDED BY PLAYAPI AND MUST MATCH !!!
+			# IF THE ID VALUES DON'T MATCH, YOUR GONNA HAVE A BAD TIME !!!
+			#
+			# Required fields for ALL types (opts)
+			# 	:feature_id=STRING 	(Playapi Feature ID )
+			# 	:points=Float 			(Points for this interaction)
+			#   :content_id=String 	(3rd party (twitter status_id, etc) id from which content was sourced)
+			#
+			# Required fields for Instapics
+			# 	:asset_url=String 	(URL of the instagram image)
+			#
+			# Required fields for Tweet
+			#   :text=String 			 	(Text from a Tweet)
+
+			def classed_interaction(type="Custom", opts = {})
 				url = "api/v2/interactions"
 				validator = "Playapi::Validation::#{type.capitalize}".split("::").inject(Module) {|acc, val| acc.const_get(val)}
 				validator.validate(opts)
