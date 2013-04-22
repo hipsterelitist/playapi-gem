@@ -4,6 +4,7 @@ require 'playapi/validation/instapic'
 module Playapi
 	class Interaction
 		extend Playapi::Utils
+		attr_reader :name, :points, :text, :content_id, :asset_url
 
 		class << self
 

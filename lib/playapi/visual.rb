@@ -3,6 +3,7 @@ require 'playapi/utils'
 module Playapi
 	class Visual
 		extend Playapi::Utils
+		attr_reader :media, :description
 
 		class << self
 
