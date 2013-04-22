@@ -18,7 +18,7 @@ module Playapi
       include mod
     end
 
-    # return [Twitter::IdentityMap]
+    # return [Playapi::IdentityMap]
     def self.identity_map
       return unless Playapi.identity_map
       @identity_map = Playapi.identity_map.new unless defined?(@identity_map) && @identity_map.class == Playapi.identity_map
@@ -28,7 +28,7 @@ module Playapi
     # Retrieves an object from the identity map.
     #
     # @param attrs [Hash]
-    # @return [Twitter::Base]
+    # @return [Playapi::Base]
     def self.fetch(attrs)
       return unless identity_map
       if object = identity_map.fetch("#{self.class.to_s.downcase}:#{attrs[:id]}")
@@ -40,7 +40,7 @@ module Playapi
     # Stores an object in the identity map.
     #
     # @param object [Object]
-    # @return [Twitter::Base]
+    # @return [Playapi::Base]
     def self.store(object)
       return object unless identity_map
       # should this operate on type even though not ever response returns type? (campaign/entities)
@@ -50,7 +50,7 @@ module Playapi
     # Returns a new object based on the response hash
     #
     # @param response [Hash]
-    # @return [Twitter::Base]
+    # @return [Playapi::Base]
     def self.from_response(response={})
       fetch_or_new(response[:body])
     end
@@ -59,7 +59,7 @@ module Playapi
     # identity map if it doesn't already exist.
     #
     # @param attrs [Hash]
-    # @return [Twitter::Base]
+    # @return [Playapi::Base]
     def self.fetch_or_new(attrs={})
       return unless attrs
       return new(attrs) unless identity_map
@@ -73,7 +73,7 @@ module Playapi
     # Initializes a new object
     #
     # @param attrs [Hash]
-    # @return [Twitter::Base]
+    # @return [Playapi::Base]
     def initialize(attrs={})
       @attrs = attrs
     end
@@ -98,7 +98,7 @@ module Playapi
     # Update the attributes of an object
     #
     # @param attrs [Hash]
-    # @return [Twitter::Base]
+    # @return [Playapi::Base]
     def update(attrs)
       @attrs.update(attrs)
       self
@@ -107,13 +107,13 @@ module Playapi
   protected
 
     # @param attr [Symbol]
-    # @param other [Twitter::Base]
+    # @param other [Playapi::Base]
     # @return [Boolean]
     def attr_equal(attr, other)
       self.class == other.class && !other.send(attr).nil? && send(attr) == other.send(attr)
     end
 
-    # @param other [Twitter::Base]
+    # @param other [Playapi::Base]
     # @return [Boolean]
     def attrs_equal(other)
       self.class == other.class && !other.attrs.empty? && attrs == other.attrs
