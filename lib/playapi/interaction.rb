@@ -74,8 +74,8 @@ module Playapi
 
 			def classed_interaction(type="Custom", opts = {})
 				url = "api/v2/interactions"
-				validator = "Playapi::Validation::#{type.capitalize}".split("::").inject(Module) {|acc, val| acc.const_get(val)}
-				validator.validate(opts)
+				#validator = "Playapi::Validation::#{type.capitalize}".split("::").inject(Module) {|acc, val| acc.const_get(val)}
+				#validator.validate(opts)
 				get_object(:post, "interaction", url, {:interaction => opts, :type => type})
 			end
 
