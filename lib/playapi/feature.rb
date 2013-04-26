@@ -48,7 +48,7 @@ module Playapi
 				url = "api/v2/features"
 				#validator = "Playapi::Validation::#{type.capitalize}".split("::").inject(Module) {|acc, val| acc.const_get(val)}
 				#validator.validate(opts)
-				get_object(:post, "feature", url, {:feature => opts})
+				get_object(:post, "feature", url, {:feature => opts, :type => type})
 			end
 
 			# Update a feature with the given id
