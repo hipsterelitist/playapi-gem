@@ -1,4 +1,9 @@
 require 'playapi/utils'
+require 'playapi/validation/feature'
+require 'playapi/validation/instagrabber'
+require 'playapi/validation/twitterscraper'
+require 'playapi/validation/picking'
+
 
 module Playapi
 	class Feature

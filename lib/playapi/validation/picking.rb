@@ -1,6 +1,6 @@
 module Playapi
   module Validation
-    module Feature
+    module Picking
 
     	class << self
 

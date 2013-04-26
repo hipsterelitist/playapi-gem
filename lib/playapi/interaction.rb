@@ -1,5 +1,7 @@
 require 'playapi/utils'
 require 'playapi/validation/instapic'
+require 'playapi/validation/tweet'
+
 
 module Playapi
 	class Interaction
