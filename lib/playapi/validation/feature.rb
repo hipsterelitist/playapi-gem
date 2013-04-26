@@ -7,9 +7,7 @@ module Playapi
         def pkeys
           @pkeys ||= [
             :name,
-            :description,
-            :type
-          ]
+            :description          ]
         end
 
         def validate(opts)

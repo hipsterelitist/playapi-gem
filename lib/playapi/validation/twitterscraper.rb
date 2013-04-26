@@ -8,7 +8,6 @@ module Playapi
           @pkeys ||= [
             :name,
             :description,
-            :type,
             :client_id,
             :client_secret,
             :oauth_token,

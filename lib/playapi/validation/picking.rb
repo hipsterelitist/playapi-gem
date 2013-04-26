@@ -8,7 +8,6 @@ module Playapi
           @pkeys ||= [
             :name,
             :description,
-            :type,
             :feature_targets
           ]
         end
