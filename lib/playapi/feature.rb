@@ -59,6 +59,12 @@ module Playapi
 				get_object(:put, "feature", url, {:feature => opts})
 			end
 
+			# destroy a feature
+			def destroy(id)
+				url = "api/v2/features/#{id}"
+				get_object(:delete, "feature", url)
+			end
+
 		end
 
 	end
