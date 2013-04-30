@@ -1,4 +1,9 @@
 require 'playapi/utils'
+require 'playapi/validation/feature'
+require 'playapi/validation/instagrabber'
+require 'playapi/validation/twitterscraper'
+require 'playapi/validation/picking'
+
 
 module Playapi
 	class Feature
@@ -41,9 +46,9 @@ module Playapi
 
 			def create(type, opts)
 				url = "api/v2/features"
-				validator = "Playapi::Validation::#{type.capitalize}".split("::").inject(Module) {|acc, val| acc.const_get(val)}
-				validator.validate(opts)
-				get_object(:post, "feature", url, {:feature => opts})
+				#validator = "Playapi::Validation::#{type.split('_').map {|w| w.capitalize}.join}".split("::").inject(Module) {|acc, val| acc.const_get(val)}
+				#validator.validate(opts)
+				get_object(:post, "feature", url, {:feature => opts, :type => type})
 			end
 
 			# Update a feature with the given id
@@ -52,6 +57,12 @@ module Playapi
 			def update(id, opts)
 				url = "api/v2/features/#{id}"
 				get_object(:put, "feature", url, {:feature => opts})
+			end
+
+			# destroy a feature
+			def destroy(id)
+				url = "api/v2/features/#{id}"
+				get_object(:delete, "feature", url)
 			end
 
 		end

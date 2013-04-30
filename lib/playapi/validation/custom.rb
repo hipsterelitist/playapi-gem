@@ -1,13 +1,13 @@
 module Playapi
   module Validation
-    module Feature
+    module Custom
 
     	class << self
 
         def pkeys
           @pkeys ||= [
-            :name,
-            :description          ]
+            :name
+          ]
         end
 
         def validate(opts)
@@ -16,12 +16,11 @@ module Playapi
               raise "#{p} must not be nil"
             end
           end
-          opts.each do |field, value|
-          	raise "Type should not be specified in options!" if field.to_s == "type"
+          opts.each do |interaction_field, value|
             #next if value.nil?
 
             unless value.is_a?(String) || value.is_a?(Integer) || value.is_a?(Float)
-              raise("Invalid #{value} specified: #{field} must be a string or a number") unless value == points
+              raise("Invalid #{interaction_field} specified: #{value} must be a string or a number") unless value == points
             end
           end
         end

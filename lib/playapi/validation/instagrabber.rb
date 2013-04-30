@@ -1,13 +1,17 @@
 module Playapi
   module Validation
-    module Feature
+    module Instagrabber
 
     	class << self
 
         def pkeys
           @pkeys ||= [
             :name,
-            :description          ]
+            :description,
+            :type,
+            :client_id,
+            :client_secret
+          ]
         end
 
         def validate(opts)

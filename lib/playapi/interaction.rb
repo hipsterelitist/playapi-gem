@@ -1,5 +1,9 @@
 require 'playapi/utils'
 require 'playapi/validation/instapic'
+require 'playapi/validation/tweet'
+require 'playapi/validation/custom'
+
+
 
 module Playapi
 	class Interaction
@@ -23,8 +27,8 @@ module Playapi
 
 			# Get an interaction with the given id
 			def get(id)
-				url = "api/v2/interactions/#{id}"
-				get_object(:get, "interaction", url)
+				url = "api/v2/interactions"
+				get_object(:get, "interaction", url, {:id => id})
 			end
 
 			# Create a custom interaction for your campaign
@@ -73,7 +77,7 @@ module Playapi
 
 			def classed_interaction(type="Custom", opts = {})
 				url = "api/v2/interactions"
-				validator = "Playapi::Validation::#{type.capitalize}".split("::").inject(Module) {|acc, val| acc.const_get(val)}
+				validator = "Playapi::Validation::#{type.split('_').map {|w| w.capitalize}.join}".split("::").inject(Module) {|acc, val| acc.const_get(val)}
 				validator.validate(opts)
 				get_object(:post, "interaction", url, {:interaction => opts, :type => type})
 			end

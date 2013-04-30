@@ -1,13 +1,18 @@
 module Playapi
   module Validation
-    module Feature
+    module Twitterscraper
 
     	class << self
 
         def pkeys
           @pkeys ||= [
             :name,
-            :description          ]
+            :description,
+            :client_id,
+            :client_secret,
+            :oauth_token,
+            :oauth_token_secret
+          ]
         end
 
         def validate(opts)

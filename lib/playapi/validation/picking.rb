@@ -1,13 +1,15 @@
 module Playapi
   module Validation
-    module Feature
+    module Picking
 
     	class << self
 
         def pkeys
           @pkeys ||= [
             :name,
-            :description          ]
+            :description,
+            :feature_targets
+          ]
         end
 
         def validate(opts)
