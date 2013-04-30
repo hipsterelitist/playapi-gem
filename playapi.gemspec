@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'playapi'
-  s.version     = '0.0.25'
-  s.date        = '2013-04-11'
+  s.version     = '0.0.26'
+  s.date        = '2013-04-30'
   s.summary     = "PlayAPI helps you make games."
   s.description = "Interact with PlayAPI"
   s.authors     = ["Chris France"]
@@ -19,7 +19,8 @@ Gem::Specification.new do |s|
                   "lib/playapi/validation/instagrabber.rb",
                   "lib/playapi/validation/twitterscraper.rb",
                   "lib/playapi/validation/picking.rb",
-                  "lib/playapi/validation/feature.rb"
+                  "lib/playapi/validation/feature.rb",
+                  "lib/playapi/validation/custom.rb"
                 ]
   s.homepage    =
     'http://rubygems.org/gems/playapi'
