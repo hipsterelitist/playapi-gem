@@ -51,6 +51,11 @@ module Playapi
 				get_object(:delete, "interaction", url)
 			end
 
+			def find_by_facet(opts)
+				url = "api/v2/interactions/facet"
+				get_object(:get, :interaction, url, opts)
+			end
+
 			# Create a classed interaction for authed campaign
 			#
 			# Type is a string corresponds to a Playapi Interaction class
