@@ -52,6 +52,7 @@ module Playapi
 			end
 
 			# pass in a hash of options to find things, currently the only one that is applicable is content_id
+			# returns an array
 			# content_id=String
 			def find_by_facet(opts)
 				url = "api/v2/interactions/facet"
