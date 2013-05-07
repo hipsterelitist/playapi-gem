@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'playapi'
-  s.version     = '0.0.27'
-  s.date        = '2013-04-30'
+  s.version     = '0.0.28'
+  s.date        = '2013-05-06'
   s.summary     = "PlayAPI helps you make games."
   s.description = "Interact with PlayAPI"
   s.authors     = ["Chris France"]

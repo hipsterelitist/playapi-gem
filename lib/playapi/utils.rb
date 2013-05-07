@@ -13,7 +13,8 @@ module Playapi
   			if res.status == 200
   				res.body[key]
   			else
-  				raise "Error returned: #{res.status}"
+          errors = res.body["errors"]
+  				raise "Error returned: #{res.status} #{errors}"
   			end
   		end
 
