@@ -29,6 +29,7 @@ module Playapi
     #
     # @param attrs [Hash]
     # @return [Playapi::Base]
+    # THIS NEEDS TO BE REIMPLEMENTED
     def self.fetch(attrs)
       return unless identity_map
       if object = identity_map.fetch("#{self.class.to_s.downcase}:#{attrs[:id]}")
