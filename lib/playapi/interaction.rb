@@ -26,8 +26,8 @@ module Playapi
 
 			# Get an interaction with the given id
 			def get(id)
-				url = "api/v2/interactions"
-				get_object(:get, "interaction", url, {:id => id})
+				url = "api/v2/interactions/#{id}"
+				get_object(:get, "interaction", url)
 			end
 
 			# Create a custom interaction for your campaign
