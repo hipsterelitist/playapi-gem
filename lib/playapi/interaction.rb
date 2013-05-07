@@ -51,6 +51,8 @@ module Playapi
 				get_object(:delete, "interaction", url)
 			end
 
+			# pass in a hash of options to find things, currently the only one that is applicable is content_id
+			# content_id=String
 			def find_by_facet(opts)
 				url = "api/v2/interactions/facet"
 				get_object(:get, :interaction, url, opts)
