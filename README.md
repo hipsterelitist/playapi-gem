@@ -6,7 +6,7 @@ Source for the gem can be found here: https://github.com/NIGHTSANDWEEKENDS/playa
 
 Since we are currently in closed beta, the gem can only be installed via github. 
 
-**You must have a PlayAPI account and credentials to use the gem, these can be obtained by contacting us or via the PlayAPI developer dashboard (pending release).
+**You must have a PlayAPI account and credentials to use the gem, these can be obtained by contacting us or via the PlayAPI developer dashboard (pending release).**
 
 ###Configuration
 
