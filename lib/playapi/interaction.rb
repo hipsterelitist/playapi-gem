@@ -27,8 +27,8 @@ module Playapi
 
 			# Get an interaction with the given id
 			def get(id)
-				url = "api/v2/interactions"
-				get_object(:get, "interaction", url, {:id => id})
+				url = "api/v2/interactions/#{id}"
+				get_object(:get, "interaction", url)
 			end
 
 			# Create a custom interaction for your campaign
@@ -50,6 +50,14 @@ module Playapi
 			def destroy(id)
 				url = "api/v2/interactions/#{id}"
 				get_object(:delete, "interaction", url)
+			end
+
+			# pass in a hash of options to find things, currently the only one that is applicable is content_id
+			# returns an array
+			# content_id=String
+			def find_by_facet(opts)
+				url = "api/v2/interactions/facet"
+				get_object(:get, :interactions, url, opts)
 			end
 
 			# Create a classed interaction for authed campaign
