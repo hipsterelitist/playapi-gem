@@ -9,7 +9,6 @@ module Playapi
     DEFAULT_CONNECTION_MIDDLEWARE = [
       Faraday::Request::Multipart,
       Faraday::Request::UrlEncoded,
-      FaradayMiddleware::Mashify,
       FaradayMiddleware::ParseJson
     ]
 

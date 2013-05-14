@@ -11,7 +11,7 @@ module Playapi
   		def get_object(method, key, path, options={})
   			res = Playapi.client.connection.send(method.to_sym, path, options)
   			if res.status == 200
-  				res.body[key]
+  				res.body[key].collect{|y| memo = y.inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo};eval "#{memo[:type]}.new(#{memo})"}
   			else
           errors = res.body["errors"]
   				raise "Error returned: #{res.status} #{errors}"
@@ -21,7 +21,7 @@ module Playapi
   		def get_objects(method, path, options={})
   			res = Playapi.client.connection.send(method.to_sym, path, options)
   			if res.status == 200
-  				res.body
+  				res.body[key]
   			else
   				raise "Error returned: #{res.status}"
   			end

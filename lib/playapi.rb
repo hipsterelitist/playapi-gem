@@ -1,6 +1,6 @@
 require 'faraday'
 require 'faraday_middleware'
-require 'hashie'
+#require 'hashie'
 require 'playapi/configurable'
 require 'playapi/client'
 require 'playapi/entity'
@@ -9,6 +9,10 @@ require 'playapi/feature'
 require 'playapi/campaign'
 require 'playapi/visual'
 require 'playapi/utils'
+require 'playapi/instapic'
+require 'playapi/checkin'
+require 'playapi/custom'
+require 'playapi/tweet'
 
 
 module Playapi

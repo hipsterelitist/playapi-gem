@@ -2,13 +2,35 @@ require 'playapi/utils'
 require 'playapi/validation/instapic'
 require 'playapi/validation/tweet'
 require 'playapi/validation/custom'
+require 'playapi/identity'
 
 
 
 module Playapi
-	class Interaction
+	class Interaction < Playapi::Identity
 		extend Playapi::Utils
-		attr_reader :name, :points, :text, :content_id, :asset_url
+
+		attr_reader :id, :text, :campaign_id, :entity_id, :feature_id
+
+		def feature
+			Playapi::Feature.get(@attrs["feature_id"])
+		end
+
+		def entity
+			Playapi::Entity.get(@attrs["entity_id"])
+		end
+
+		def push
+			Playapi::Interaction.update(id, @attrs)
+		end
+
+		def destroy
+			Playapi::Interaction.destroy(id)
+		end
+
+		def campaign
+			Playapi::Campaign.get(@attrs["campaign_id"])
+		end
 
 		class << self
 

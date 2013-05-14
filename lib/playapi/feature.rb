@@ -9,10 +9,6 @@ module Playapi
 	class Feature
 		extend Playapi::Utils
 
-		def initialize
-
-		end
-
 		class << self
 			# Get a list of features for auth campaign
 			# TODO: add filters and options
