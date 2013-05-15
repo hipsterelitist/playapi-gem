@@ -44,10 +44,10 @@ module Playapi
     end
 
     def reset!
-      defaultz = {client_id: "foo", client_secret: "foo", oauth_token: "foo", endpoint: "http://198.199.69.11"}
+      defaultz = {client_id: "foo", client_secret: "foo", oauth_token: "foo", endpoint: "http://pre-playapi-dev.herokuapp.com"}
       # we can probably chuck conn_ops
       conn_ops = {
-        :connection_options => {:headers => {:accept => "application/json", :user_agent => "PlayAPI Gem 0.0.1"}, 
+        :connection_options => {:headers => {:accept => "application/json", :user_agent => "PlayAPI Gem 0.1.1"}, 
           :ssl => {:verify => false}}
       }
       #defaultz.merge!(conn_ops)

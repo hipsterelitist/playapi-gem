@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
                   "lib/playapi/validation/instapic.rb",
                   "lib/playapi/validation/tweet.rb",
                   "lib/playapi/validation/instagrabber.rb",
-                  "lib/playapi/validation/twitterscraper.rb",
+                  "lib/playapi/validation/twitter_scraper.rb",
                   "lib/playapi/validation/picking.rb",
                   "lib/playapi/validation/feature.rb",
                   "lib/playapi/validation/custom.rb",

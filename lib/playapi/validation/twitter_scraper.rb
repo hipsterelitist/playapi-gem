@@ -1,6 +1,6 @@
 module Playapi
   module Validation
-    module Twitterscraper
+    module TwitterScraper
 
     	class << self
 

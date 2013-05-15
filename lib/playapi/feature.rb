@@ -1,13 +1,15 @@
 require 'playapi/utils'
 require 'playapi/validation/feature'
 require 'playapi/validation/instagrabber'
-require 'playapi/validation/twitterscraper'
+require 'playapi/validation/twitter_scraper'
 require 'playapi/validation/picking'
+require 'playapi/identity'
 
 
 module Playapi
-	class Feature
+	class Feature < Playapi::Identity
 		extend Playapi::Utils
+		attr_reader :id, :campaign_id, :name, :live, :default_points, :attrs
 
 		def interactions
 			Playapi::Interaction.by_feature(id)
@@ -30,7 +32,7 @@ module Playapi
 			# TODO: add filters and options
 			def list
 				url = "api/v2/features"
-				get_object(:get, "features", url)
+				get_objects(:get, "features", url)
 			end
 
 			# Fetch a feature by id
