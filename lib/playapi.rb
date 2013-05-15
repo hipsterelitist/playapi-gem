@@ -13,6 +13,10 @@ require 'playapi/instapic'
 require 'playapi/checkin'
 require 'playapi/custom'
 require 'playapi/tweet'
+require 'playapi/twitter_scraper'
+require 'playapi/instagrabber'
+require 'playapi/foursquare'
+require 'playapi/picking'
 
 
 module Playapi

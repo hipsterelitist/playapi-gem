@@ -9,6 +9,22 @@ module Playapi
 	class Feature
 		extend Playapi::Utils
 
+		def interactions
+			Playapi::Interaction.by_feature(id)
+		end
+
+		def push
+			Playapi::Feature.update(id, @attrs)
+		end
+
+		def destroy
+			Playapi::Feature.destroy(id)
+		end
+
+		def campaign
+			Playapi::Campaign.get(@attrs["campaign_id"])
+		end
+
 		class << self
 			# Get a list of features for auth campaign
 			# TODO: add filters and options
