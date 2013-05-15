@@ -30,7 +30,8 @@ Gem::Specification.new do |s|
                   "lib/playapi/twitter_scraper.rb",
                   "lib/playapi/picking.rb",
                   "lib/playapi/instagrabber.rb",
-                  "lib/playapi/foursquare.rb"
+                  "lib/playapi/foursquare.rb",
+                  "lib/playapi/voting.rb"
                 ]
   s.homepage    =
     'http://rubygems.org/gems/playapi'
