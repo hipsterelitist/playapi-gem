@@ -17,6 +17,9 @@ require 'playapi/instagrabber'
 require 'playapi/foursquare'
 require 'playapi/picking'
 require 'playapi/voting'
+require 'playapi/snapchatter'
+require 'playapi/snap'
+require 'playapi/account'
 
 
 module Playapi

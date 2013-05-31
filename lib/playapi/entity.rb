@@ -1,7 +1,8 @@
 require 'playapi/utils'
+require 'playapi/identity'
 
 module Playapi
-	class Entity
+	class Entity < Playapi::Identity
 		extend Playapi::Utils
 
 		class << self

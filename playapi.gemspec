@@ -33,7 +33,8 @@ Gem::Specification.new do |s|
                   "lib/playapi/foursquare.rb",
                   "lib/playapi/voting.rb",
                   "lib/playapi/snapchatter.rb",
-                  "lib/playapi/snap.rb"
+                  "lib/playapi/snap.rb",
+                  "lib/playapi/account.rb"
                 ]
   s.homepage    =
     'http://rubygems.org/gems/playapi'
