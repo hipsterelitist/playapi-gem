@@ -21,13 +21,13 @@ An initializer can be used to configure the gem for your application.
 ###Fetching Your Campaign
 
 	Playapi::Campaign.get
-	=> #<Hashie::Mash display_name=nil id="516f1b9d6e293d0002000001" interaction_count=7 live=true name="foo" type="Campaign">
+	=> #<Playapi::Campaign:0x007fc92a3336f0 @attrs={:id=>"516f1b9d6e293d0002000001", :name=>"foo", :live=>true, :display_name=>nil, :type=>"Campaign", :interaction_count=>6706}>
 
 This will give you basic information about your currently scoped and authorized campaign.
 
 ###Basics of Interactions
 
-	#<Hashie::Mash comments_count=0 content_id="INSTAGRAM_CONTENT_ID" entity_id="PLAYAPI_ENTITY_ID" id="PLAYAPI_ID" likes=8 link="http://instagram.com/p/Lv9su8QQlO/" name="foobar" points=15.0 text="hello world #hello #world" type="Instapic" visuals=[]>
+	#<Playapi::Instapic:0x007f95aa2b7fe0 @attrs={:id=>"51814324877e820008000005", :type=>"Instapic", :entity_id=>"517c494869f59e000b000002", :points=>20.0, :name=>"gap_crabtree", :content_id=>"430442571980746996_311396931", :feature_id=>"517c47dd72b1d9000e000001", :likes=>8, :link=>"http://instagram.com/p/X5PT0XHjD0/", :text=>"spring weather is here! #gapkids #girlsfashion #shopcrabtree #gapcrabtree #gap1969 #spring #raleigh #bebright #styldby #shorts #gap", :visuals=>[], :comments_count=>0}>
 
 The above is an example of an Instapic, one of PlayAPI's core interaction types. As you might have guessed, Instapics are PlayAPI's representation of Instagram data. Instapics can be pulled directly from Instagram using the Instagrabber feature or pushed from your application using the gem.  
 
@@ -39,6 +39,6 @@ The above pushes a new Instapic to Playapi. The required fields for creating an 
 * **feature_id** (the id of the feature which determines what to do with the object)
 * **asset_url** (the url from which to source the image **-not required for other interaction types**)
 
-The response from the above classed_interaction call should be: 
+This will return the Instapic object created by PlayAPI.
 
-	=> #<Hashie::Mash comments_count=0 content_id="bunny" entity_id="51894c2a6e4bd2000e000004" feature_id="517c47dd72b1d9000e000001" id="51894c2a6e4bd2000e000003" likes=0 link=nil name="foo" points=0.0 text=nil type="Instapic" visuals=[...]>
+Alternatively, a new Instapic can be instantiated and pushed.

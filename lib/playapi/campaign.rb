@@ -1,7 +1,9 @@
 require 'playapi/utils'
+require 'playapi/identity'
+
 
 module Playapi
-	class Campaign
+	class Campaign < Playapi::Identity
 		extend Playapi::Utils
 
 		# stub this out for now, it will probably do crazy stuff when we integrate campaign controls.

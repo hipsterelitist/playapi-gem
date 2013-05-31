@@ -78,6 +78,14 @@ module Playapi
 				url = "api/v2/features/#{id}"
 				get_object(:delete, "feature", url)
 			end
+			# pass in a hash of options to find things, options include: type and name
+			# returns an array
+			# name=String
+			# type=String
+			def find_by_facet(opts)
+				url = "api/v2/features/facet"
+				get_objects(:get, :features, url, opts)
+			end
 
 		end
 

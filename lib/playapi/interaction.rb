@@ -21,7 +21,7 @@ module Playapi
 		end
 
 		def push
-			Playapi::Interaction.update(id, @attrs)
+			self.attrs = Playapi::Interaction.update(id, @attrs).attrs
 		end
 
 		def destroy
@@ -44,7 +44,7 @@ module Playapi
 			# :type=STRING 		(Valid options are Instapic, Tweet, Checkin)
 			def list
 				url = "api/v2/interactions"
-				get_object(:get, "interactions", url)
+				get_objects(:get, "interactions", url)
 			end
 
 			# Get an interaction with the given id
@@ -79,7 +79,7 @@ module Playapi
 			# content_id=String
 			def find_by_facet(opts)
 				url = "api/v2/interactions/facet"
-				get_object(:get, :interactions, url, opts)
+				get_objects(:get, :interactions, url, opts)
 			end
 
 			# Create a classed interaction for authed campaign
