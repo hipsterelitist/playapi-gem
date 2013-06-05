@@ -20,6 +20,8 @@ require 'playapi/voting'
 require 'playapi/snapchatter'
 require 'playapi/snap'
 require 'playapi/account'
+require 'playapi/vine'
+require 'playapi/vine_scraper'
 
 
 module Playapi
