@@ -44,6 +44,10 @@ module Playapi
 				get_object(:get, "results", url, opts)
 			end
 
+			def features
+				Playapi::Feature.list
+			end
+
 			def create(opts)
 				#raise "WE DON'T MAKE CAMPAIGNS YET"
 				#url = "api/v2/campaigns"
